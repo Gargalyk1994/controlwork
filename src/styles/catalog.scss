@@ -1,0 +1,196 @@
+@import './normalize.scss';
+@import './commonStyles.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+@import './vars.scss';
+
+.heading {
+    background-color: $pink-color;
+    &__box{
+        height: 148px;
+        text-transform: uppercase;
+        @include flexBetween();
+        align-items: center;
+    }
+    &__title{
+        font-family: $fontRegular;
+        font-size: 24px;
+        color: $accent-color;
+    }
+    &__breadcrumbs-item{
+        font-family: $fontLight;
+        color: $colorText3;
+    }
+    &__breadcrumbs-item.current-page{
+        font-family: $fontBold;
+        color: $accent-color;
+    }
+    &__breadcrumbs{
+        display: flex;
+        gap: 5px;
+    }
+}
+
+.filter{
+    summary{
+        text-transform: uppercase;
+    }
+    &__wrap{
+        align-items: center;
+        padding: 51px 0 94px;
+        position: relative;
+    }
+    &__box{
+        width: 360px;
+        display: flex;
+        padding: 16px 13px;
+        cursor: default;
+        position: absolute;
+        &[open] {
+            background-color: $colorText1;
+            box-shadow: 6px 4px 35px 
+            #00000036;
+        }
+        &[open] .filter__heading{
+            color: $accent-color;
+        }
+        &[open] path{
+            fill: $accent-color;
+        }
+    }
+    &__title{
+        @include flexAlign();
+        gap: 11px;
+        margin-bottom: 13px;
+        font-family: $fontRegular;
+        font-weight: 600;
+        color: #000;
+    }
+    &__content{
+        ul{
+            padding: 24px 16px;
+            list-style: none;
+            @include flexColumn();
+            gap: 11px;
+            li{
+                a{
+                    color: $colorText3;
+                    &:hover{
+                        color: $accent-color;
+                    }
+                }
+            }
+        }
+    }
+    &__item{
+        display: flex;
+        gap: 18px;
+        font-family: $fontRegular;
+        font-size: 14px;
+        color: $colorText3;
+        summary{
+            padding: 12px;
+            border-left: 5px solid $accent-color;
+            border-bottom: 1px solid #EBEBEB;
+        }
+        &[open] summary{
+            color: $accent-color;
+        }
+    }
+}
+
+.filter-sort{
+    position: absolute;
+    left: 390px;
+    top: 64px;
+    display: flex;
+    gap: 28px;
+    &__item{
+        position: relative;
+    }
+    &__heading{
+        @include flexAlign();
+        gap: 10px;
+        font-family: $fontRegular;
+        font-size: 14px;
+        color: $colorText3;
+    }
+    &__box{
+        @include flexColumn();
+        gap: 6px;
+        padding: 7px 30px 11px 9px;
+        box-shadow: 6px 4px 35px 0 rgba(0, 0, 0, 0.21);
+        background: $colorText1;
+        position: absolute;
+        left: -10px;
+    }
+    &__checkbox{
+        display: flex;
+        gap: 10px;
+        label{
+            font-family: $fontRegular;
+            color:$colorText3;
+        }
+    }
+
+}
+
+.products{
+    &__image-box-background1{
+        background-image: url(../assets/images/product1.png);
+    }
+    &__image-box-background2{
+        background-image: url(../assets/images/product2-2.png);
+    }
+    &__image-box-background3{
+        background-image: url(../assets/images/product3.png);
+    }
+    &__image-box-background4{
+        background-image: url(../assets/images/product4.png);
+    }
+    &__image-box-background5{
+        background-image: url(../assets/images/product5-2.png);
+    }
+    &__image-box-background6{
+        background-image: url(../assets/images/product6-2.png);
+    }
+    &__image-box-background7{
+        background-image: url(../assets/images/product7.png);
+    }
+    &__image-box-background8{
+        background-image: url(../assets/images/product8.png);
+    }
+    &__image-box-background9{
+        background-image: url(../assets/images/product9.png);
+    }
+    &__pages{
+        width: 284px;
+        @include flexCenter();
+        gap: 18px;
+        padding: 16px;
+        border: 1px solid $borderColor;
+        margin: 0 auto 96px;
+    }
+    &__prev-page, &__next-page{
+        &:hover svg path{
+            fill: $accent-color;
+        }
+    }
+    &__list-pages{
+        list-style-type: none;
+        @include flexCenter();
+        gap: 15px;
+        
+    }
+    &__page {
+        font-family: $fontLight;
+        font-weight: 300;
+        font-size: 16px;
+        color: $borderColor;
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
+@import './media.scss';

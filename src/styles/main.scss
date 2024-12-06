@@ -1,0 +1,165 @@
+@import './normalize.scss';
+@import './commonStyles.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+@import './vars.scss';
+
+.header {
+    .main-block {
+        max-height: 764px;
+        background-color: $pink-color;
+        @include flexCenter();
+        position: relative;
+        &__image {
+            width: 100%; 
+            height: 100%;
+        }
+        &__right-block {
+            height: 100%;
+            max-width: 405px;
+            font-size: 48px;
+            font-family: $fontBold;
+            font-weight: 700;
+        }
+        &__title-h1::before{
+            content: "";
+            background-color: $accent-color;
+            width: 12px;
+            float: left;
+            height: 92px;
+            margin-right: 16px;
+        }
+        &__title-h1 {
+            font-weight: 900;
+            font-size: 1em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        &__title-other1 {
+            font-size: 0.7em;
+        }
+        &__title-other2{
+            font-size: 0.7em;
+            color: $accent-color;
+        }
+    }
+}
+
+.offer {
+    padding: 65px 0 96px;
+    &__box {
+        @include flexCenter();
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    &__card{
+        min-height: 260px;
+        min-width: 360px;
+        background-size: cover;
+        background-position: center;
+        /* position: relative; */
+        &:hover .offer__title {
+            opacity: 1;
+        }
+        &:hover .offer__dark-card {
+            opacity: 0.8;
+        }
+    }
+    &__card1 {
+        background-image: url(../assets/images/offer-image1.png);
+    }
+    &__card2 {
+        background-image: url(../assets/images/offer-image2.png);
+    }
+    &__card3 {
+        background-image: url(../assets/images/offer-image3.png);
+    }
+    &__card4 {
+        flex-grow: 1;
+        height: 180px;
+        background-image: url(../assets/images/offer-image4.png);
+    }
+    &__text{
+        color: $colorText1;
+        font-family: $fontRegular;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    &__accent-text {
+        color: $accent-color;
+        font-family: $fontBold;
+        font-size: 24px;
+    }
+    &__title{
+        opacity: 0;
+        /* position: absolute;
+        top: 1;
+        bottom: 1;
+        left: 1;
+        right: 1;
+        z-index: 1;
+        opacity: 0; */
+        @include flexCenter();
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        transition: 0.5s ease;
+    }
+    &__dark-card {
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        /* position: absolute; */
+        background-color: #211616b3;
+        /* top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: 0.5s ease; */
+    }
+}
+
+.products{
+    &__title {
+        color: $backBlockColor;
+        font-family: $fontRegular;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    &__description {
+        color: #9f9f9f;
+        font-family: $fontRegular;
+        line-height: 17px;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+    &__image-box-background1{
+        background-image: url(../assets/images/product1.png);
+    }
+    &__image-box-background2{
+        background-image: url(../assets/images/product2.png);
+    }
+    &__image-box-background3{
+        background-image: url(../assets/images/product3.png);
+    }
+    &__image-box-background4{
+        background-image: url(../assets/images/product4.png);
+    }
+    &__image-box-background5{
+        background-image: url(../assets/images/product5.png);
+    }
+    &__image-box-background6{
+        background-image: url(../assets/images/product6.png);
+    }
+    &__button {
+        @include button();
+        margin: 0 auto 95px;
+    }
+}
+
+@import './media.scss';
